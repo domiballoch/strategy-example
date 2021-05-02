@@ -40,4 +40,4 @@ mvn clean install
 <br/>mvn test to test
 
 <h3>Logging level</h3>
-<br/>DEBUG - set filepath as/if required
+DEBUG - set filepath as/if required

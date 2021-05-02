@@ -13,7 +13,6 @@ Simple demo using a discounter for a shopping basket.
 interface segregation and dependency inversion.
 
 <h3>Learning Outcomes</h3>
-<br/>
 1. Standard design using concrete methods:
    <br/>Benefits:
    <br/> Can implement multiple interfaces enabling different behaviours.

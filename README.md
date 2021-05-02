@@ -19,7 +19,7 @@ interface segregation and dependency inversion.
    <br/> Can inject Spring handled objects into the concrete classes.
    <br/> Drawbacks:
    <br/> Can become difficult to maintain with lots of classes.
-
+<br/>
 2. Java 8 design using static calls with lambdas:
    <br/>Benefits:
    <br/> Cleaner and more lightweight.

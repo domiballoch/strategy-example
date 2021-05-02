@@ -14,14 +14,14 @@ interface segregation and dependency inversion.
 
 <h3>Learning Outcomes</h3>
 1. Standard design using concrete methods:
-   Benefits:
+   <br/>Benefits:
    <br/> Can implement multiple interfaces enabling different behaviours.
    <br/> Can inject Spring handled objects into the concrete classes.
    <br/> Drawbacks:
    <br/> Can become difficult to maintain with lots of classes.
 
 2. Java 8 design using static calls with lambdas:
-   Benefits:
+   <br/>Benefits:
    <br/> Cleaner and more lightweight.
    <br/> Less objects that need autowiring, just a static call.
    <br/> Drawbacks:

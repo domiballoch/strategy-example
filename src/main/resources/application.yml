@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: strategy pattern
+
+log:
+  service: ${spring.application.name}
+  appender: CONSOLE
+  level: DEBUG
+
+discount:
+  easter: 0.20
+  christmas: 0.35
+  blackFriday: 0.50

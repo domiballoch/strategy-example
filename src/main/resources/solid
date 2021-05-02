@@ -1,0 +1,138 @@
+Single Responsibility
+---------------------
+
+Testing – A class with one responsibility will have far fewer test cases
+Lower coupling – Less functionality in a single class will have fewer dependencies
+Organization – Smaller, well-organized classes are easier to search than monolithic ones
+
+Example - the discounter classes that implement the discounter interface do one thing.
+The test just requires that they return the correct discount.
+They only have one dependency, the config properties thus require one autowired or mocked object.
+As soon as we add more than one functionality, we require more dependencies.
+
+
+Open for Extension, Closed for Modification
+-------------------------------------------
+
+Apart from bug fixing, it isn't ideal to modify existing code as it can cause failures elsewhere.
+When writing code, its best to design it in a way so it open for extension.
+This is made much easier by following the other principles, e.g using abstraction and keeping things loosely coupled.
+
+Example - The Discounter interface has no concrete code attached to it. The code that calls it doesn't care.
+The implementations are separated, others can easily added without modified existing code or functionality.
+
+Note: Its nearly always better to use interfaces and composition over extending as we see in our next example.
+
+
+Liskov Substitution
+-------------------
+
+The sub class must follow the base contract of the super class.
+If class B is a subtype of class A, then we should be able to replace A with B without disrupting the behavior
+of our program.
+
+Say we have an abstract payment class and extended card classes that looked like this:
+
+abstract class PaymentDetails {
+ private String name;
+ private String cardNumber;
+ private Date expiryDate;
+
+ public void validate() throws validationException {}
+
+}
+
+public class CreditCard extends PaymentDetails {
+ public void validate() throws validationException {}
+}
+
+public class DebitCard extends PaymentDetails {
+ public void validate() throws validationException {}
+}
+
+Now what if we want to add a discount class like this;
+
+public class Discount extends PaymentDetails {
+ private Optional<String> discountCode;
+ public void validate(discountCode) throws validationException {}
+}
+
+By creating a new class and extending this abstract class we would need to add new validation behaviour
+and would be violating the Liskov principle.
+
+
+Interface Segregation
+---------------------
+
+Larger interfaces should be split into smaller ones. By doing so, we can ensure that implementing classes
+only need to be concerned about the methods that are of interest to them.
+
+BAD:
+
+public interface shopService {
+    void applyDiscount();
+    void pay();
+    void getEmployeeWages();
+}
+
+GOOD:
+
+public interface discounter {
+}
+
+public interface basketService {
+}
+
+public interface employeeService {
+}
+
+
+Dependency Inversion
+--------------------
+
+This refers to the decoupling of software modules.
+This way, instead of high-level modules depending on low-level modules, both will depend on abstractions.
+In doing this we free ourselves of inter-dependency and can freely implement multiple behaviours.
+
+BAD: Tightly coupled and difficult to test (another example of tight coupling is to hard-code values).
+
+//instantiate a new customer
+public class Customer {
+ private BusinessUser user;
+ private VIPAccount account;
+
+ public CustomerPojo(BusinessUser user, VIPAccount account) {
+  user = new BusinessUser();
+  account = new VIPAccount();
+ }
+}
+
+GOOD: Loosely coupled using constructor dependency injection
+
+public interface User{}
+public interface Account{}
+
+public class UserImpl implements User{}
+public class AccountImpl implements Account{}
+
+public class Customer {
+ private User user;
+ private Account account;
+
+ public Customer(User user, Account account) {
+  this.user = user;
+  this.account = account();
+ }
+}
+
+We can also use field dependency injection using @Autowired.
+Some benefits of constructor injection:
+
+1. Null Pointers - All required dependencies are available at initialization time, helping to prevent the
+infamous null-pointer.
+This happens when the new keyword is used once the object in handled by the Application Context.
+Another cause is the dependent class does not have a stereotype annotation or the class or test needing the
+dependency is not annotated with @Component or @SpringBootTest.
+2. Immutability - Constructor injection helps in creating immutable objects as a constructor’s signature is
+the only possible way to create objects. Once we create a bean, we cannot alter its dependencies anymore.
+This is why most projects use the builder pattern, usually with Lomboks @Builder annotation;

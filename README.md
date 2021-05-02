@@ -20,7 +20,7 @@ interface segregation and dependency inversion.
    <br/> Drawbacks:
    <br/> Can become difficult to maintain with lots of classes.
 <br/>
-2. Java 8 design using static calls with lambdas:
+<br/>2. Java 8 design using static calls with lambdas:
    <br/>Benefits:
    <br/> Cleaner and more lightweight.
    <br/> Less objects that need autowiring, just a static call.

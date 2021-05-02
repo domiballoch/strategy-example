@@ -1,18 +1,18 @@
-#Strategy Pattern Example
-####Author: Dominic Balloch
+<h1>Strategy Pattern Example</h1>
+<br/><h4>Author: Dominic Balloch</h4>
 
-##Description
-Two interface versions of strategy pattern implementation.
-Two helper classes: One using setters, one using Java8.
-Run tests to test functionality.
-No DB or servers set up for the purpose of this program.
+#<h3>Description</h3>
+<br/>Two interface versions of strategy pattern implementation.
+<br/>Two helper classes: One using setters, one using Java8.
+<br/>Run tests to test functionality.
+<br/>No DB or servers set up for the purpose of this program.
 
-##Design
-Simple demo using a discounter for a shopping basket.
-Solid principles include single responsibility, open-closed,
+#<h3>Design</h3>
+<br/>Simple demo using a discounter for a shopping basket.
+<br/>Solid principles include single responsibility, open-closed,
 interface segregation and dependency inversion.
 
-##Learning Outcomes
+#<h3>Learning Outcomes</h3>
 1. Standard design using concrete methods:
    <br/> Benefits:
    <br/> Can implement multiple interfaces enabling different behaviours.
@@ -28,16 +28,16 @@ interface segregation and dependency inversion.
    <br/> Cannot inject into interfaces.
    <br/> Cannot implement different interfaces.
 
-##Prerequisites
-Java 11
+#<h3>Prerequisites</h3>
+<br/>Java 11
 <br/> Spring Boot 2.4.5.RELEASE
 <br/>Maven 3.6.3
 <br/>No SQL required
 
-##Build project
-mvn clean install
+#<h3>Build project</h3>
+<br/>mvn clean install
 <br/>spring-boot:run
 <br/>mvn test to test
 
-#Logging level
-DEBUG - set filepath as/if required
+#<h3>Logging level</h3>
+<br/>DEBUG - set filepath as/if required

@@ -30,7 +30,7 @@ interface segregation and dependency inversion.
 
 <h3>Prerequisites</h3>
 Java 11
-<br/> Spring Boot 2.4.5.RELEASE
+<br/> Spring Boot 2.4.5
 <br/>Maven 3.6.3
 <br/>No SQL required
 

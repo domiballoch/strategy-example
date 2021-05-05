@@ -8,14 +8,15 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 
 @Slf4j
-//@AllArgsConstructor
 @Component
 public class BlackFridayDiscounter implements Discounter {
 
-    //constructor injection example
     @Autowired
     private ConfigProperties configProperties;
 
+    /**
+     * Constructor injection example
+     */
 //    public BlackFridayDiscounter(ConfigProperties configProperties){
 //        this.configProperties = configProperties;
 //    }

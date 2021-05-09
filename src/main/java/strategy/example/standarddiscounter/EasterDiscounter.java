@@ -25,6 +25,6 @@ public class EasterDiscounter implements Discounter {
     @Override
     public BigDecimal applyDiscount(final BigDecimal amount) {
         log.info("Applying discount: {}", amount);
-        return amount.multiply(BigDecimal.valueOf(configProperties.getEaster()));
+        return amount.multiply(new BigDecimal(String.valueOf(configProperties.getEaster())));
     }
 }

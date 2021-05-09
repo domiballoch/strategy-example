@@ -31,9 +31,9 @@ public class ShoppingBasketImpl implements ShoppingBasket {
     public BigDecimal calculateBasket(final BigDecimal totalPrice, final String discountCode){
         final Discounter discounter = discountHelperWithContext.applyStrategyLogic(discountCode);
         //final DiscounterJava8 discounter = discountHelper.applyStrategyLogic(discountCode);
-        log.info("Sum of basket: {}", totalPrice);
-        log.info("Discount applied: {}", discounter.applyDiscount(totalPrice));
-        log.info("Final price: {}", totalPrice.subtract(discounter.applyDiscount(totalPrice)));
+        log.info("Sum of basket: {}", StrategyUtils.returnValueWithScale(totalPrice));
+        log.info("Discount applied: {}", StrategyUtils.returnValueWithScale(discounter.applyDiscount(totalPrice)));
+        log.info("Final price: {}", StrategyUtils.returnValueWithScale(totalPrice.subtract(discounter.applyDiscount(totalPrice))));
         return StrategyUtils.returnValueWithScale(totalPrice.subtract(discounter.applyDiscount(totalPrice)));
     }
 

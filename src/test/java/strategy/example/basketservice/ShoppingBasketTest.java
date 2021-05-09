@@ -24,31 +24,31 @@ public class ShoppingBasketTest {
 
     @Test
     public void shouldApplyStrategyWithEasterDiscountAndCalcTotal() {
-        final BigDecimal totalPrice = TestUtils.returnValueWithScale((BigDecimal.valueOf(100.00)));
+        final BigDecimal totalPrice = TestUtils.returnValueWithScale((new BigDecimal("100.00")));
         final BigDecimal priceMinusEasterDiscount = shoppingBasketImpl.calculateBasket(totalPrice, EASTER_CODE);
 
-        assertThat(priceMinusEasterDiscount).isEqualByComparingTo(TestUtils.returnValueWithScale(BigDecimal.valueOf(80.00)));
+        assertThat(priceMinusEasterDiscount).isEqualByComparingTo(TestUtils.returnValueWithScale(new BigDecimal("80.00")));
     }
 
     @Test
     public void shouldApplyStrategyWithChristmasDiscountAndCalcTotal() {
-        final BigDecimal totalPrice = TestUtils.returnValueWithScale(BigDecimal.valueOf(100.00));
+        final BigDecimal totalPrice = TestUtils.returnValueWithScale((new BigDecimal("100.00")));
         final BigDecimal priceMinusChristmasDiscount = shoppingBasketImpl.calculateBasket(totalPrice, XMAS_CODE);
 
-        assertThat(priceMinusChristmasDiscount).isEqualByComparingTo(TestUtils.returnValueWithScale(BigDecimal.valueOf(65.00)));
+        assertThat(priceMinusChristmasDiscount).isEqualByComparingTo(TestUtils.returnValueWithScale(new BigDecimal("65.00")));
     }
 
     @Test
     public void shouldApplyStrategyWithBlackFridayDiscountAndCalcTotal() {
-        final BigDecimal totalPrice = TestUtils.returnValueWithScale(BigDecimal.valueOf(100.00));
+        final BigDecimal totalPrice = TestUtils.returnValueWithScale((new BigDecimal("100.00")));
         final BigDecimal priceMinusBlackFridayDiscount = shoppingBasketImpl.calculateBasket(totalPrice, BLACK_FRIDAY_CODE);
 
-        assertThat(priceMinusBlackFridayDiscount).isEqualByComparingTo(TestUtils.returnValueWithScale(BigDecimal.valueOf(50.00)));
+        assertThat(priceMinusBlackFridayDiscount).isEqualByComparingTo(TestUtils.returnValueWithScale(new BigDecimal("50.00")));
     }
 
     @Test
     public void shouldThrowException() {
-        final BigDecimal productPrice = TestUtils.returnValueWithScale(BigDecimal.valueOf(100.00));
+        final BigDecimal productPrice = TestUtils.returnValueWithScale(new BigDecimal("100.00"));
         final Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             shoppingBasketImpl.calculateBasket(productPrice, EXPIRED_CODE);
         });
@@ -59,9 +59,9 @@ public class ShoppingBasketTest {
     }
 
     @Test public void shouldReturnTotalWithoutDiscount() {
-        final BigDecimal productPrice = TestUtils.returnValueWithScale(BigDecimal.valueOf(100.00));
+        final BigDecimal productPrice = TestUtils.returnValueWithScale(new BigDecimal("100.00"));
         final BigDecimal price = shoppingBasketImpl.calculateBasket(productPrice);
 
-        assertThat(price).isEqualByComparingTo(TestUtils.returnValueWithScale(BigDecimal.valueOf(100.00)));
+        assertThat(price).isEqualByComparingTo(TestUtils.returnValueWithScale(new BigDecimal("100.00")));
     }
 }

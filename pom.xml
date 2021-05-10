@@ -11,7 +11,7 @@
 	<groupId>com.strategy</groupId>
 	<artifactId>example</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>example</name>
+	<name>strategy-example</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>

@@ -11,6 +11,7 @@ Two interface versions of strategy pattern implementation.
 Simple demo using a discounter for a shopping basket.
 <br/>Solid principles include single responsibility, open-closed,
 interface segregation and dependency inversion.
+<br/>Solid principles covered in solid.txt in resources folder.
 
 <h3>Learning Outcomes</h3>
 1. Standard design using concrete classes:

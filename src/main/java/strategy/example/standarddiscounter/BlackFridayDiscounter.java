@@ -15,7 +15,7 @@ public class BlackFridayDiscounter implements Discounter {
     private ConfigProperties configProperties;
 
     /**
-     * Constructor injection example
+     * Constructor injection example - refer to solid.txt
      */
 //    public BlackFridayDiscounter(ConfigProperties configProperties){
 //        this.configProperties = configProperties;
@@ -30,7 +30,7 @@ public class BlackFridayDiscounter implements Discounter {
     @Override
     public BigDecimal applyDiscount(final BigDecimal amount) {
         log.info("Applying discount: {}", amount);
-        return amount.multiply(BigDecimal.valueOf(configProperties.getBlackFriday()));
+        return amount.multiply(new BigDecimal(String.valueOf(configProperties.getBlackFriday())));
     }
 
 }

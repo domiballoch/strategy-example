@@ -5,15 +5,17 @@ import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @Configuration
 @ConfigurationProperties(prefix = "discount")
 public class ConfigProperties {
 
-    private Double easter;
-    private Double christmas;
-    private Double blackFriday;
+    private BigDecimal easter;
+    private BigDecimal christmas;
+    private BigDecimal blackFriday;
 
 }
 

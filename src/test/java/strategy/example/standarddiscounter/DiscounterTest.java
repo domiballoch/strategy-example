@@ -22,19 +22,19 @@ public class DiscounterTest {
 
     @Test
     public void shouldApplyEasterDiscount() {
-        final BigDecimal totalPrice = easterDiscounter.applyDiscount(BigDecimal.valueOf(100.00));
-        assertThat(totalPrice).isEqualByComparingTo(BigDecimal.valueOf(20));
+        final BigDecimal totalPrice = easterDiscounter.applyDiscount(new BigDecimal("100.00"));
+        assertThat(totalPrice).isEqualByComparingTo(new BigDecimal("20.00"));
     }
 
     @Test
     public void shouldApplyChristmasDiscount() {
-        final BigDecimal totalPrice = christmasDiscounter.applyDiscount(BigDecimal.valueOf(100.00));
-        assertThat(totalPrice).isEqualByComparingTo(BigDecimal.valueOf(35));
+        final BigDecimal totalPrice = christmasDiscounter.applyDiscount(new BigDecimal("100.00"));
+        assertThat(totalPrice).isEqualByComparingTo(new BigDecimal("35.00"));
     }
 
     @Test
     public void shouldApplyBlackFridayDiscount() {
-        final BigDecimal totalPrice = blackFridayDiscounter.applyDiscount(BigDecimal.valueOf(100.00));
-        assertThat(totalPrice).isEqualByComparingTo(BigDecimal.valueOf(50));
+        final BigDecimal totalPrice = blackFridayDiscounter.applyDiscount(new BigDecimal("100.00"));
+        assertThat(totalPrice).isEqualByComparingTo(new BigDecimal("50.00"));
     }
 }

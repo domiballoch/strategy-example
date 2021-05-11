@@ -9,8 +9,7 @@ Two interface versions of strategy pattern implementation.
 
 <h3>Design</h3>
 Simple demo using a discounter for a shopping basket.
-<br/>Strategy is based on composition (has-A relationship) 
-<br/>but the behaviour changes dyamically at run-time.
+<br/>Strategy is based on composition (has-A relationship) but the behaviour changes dyamically at run-time.
 <br/>Solid principles include single responsibility, open-closed,
 interface segregation and dependency inversion.
 <br/>Solid principles covered in solid.txt in resources folder.

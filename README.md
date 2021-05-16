@@ -1,5 +1,6 @@
 [![Actions Status](https://github.com/domiballoch/strategy-example/actions/workflows/maven.yml/badge.svg)](https://github.com/domiballoch/strategy-example/actions)
 [![codecov](https://codecov.io/gh/domiballoch/strategy-example/branch/master/graph/badge.svg?token=3DQWELQG2V)](https://codecov.io/gh/domiballoch/strategy-example)
+[![forthebadge](https://forthebadge.com/images/badges/contains-tasty-spaghetti-code.svg)](https://forthebadge.com)
 
 <h1>Strategy Pattern Example</h1>
 <h4>Author: Dominic Balloch</h4>

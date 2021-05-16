@@ -1,3 +1,6 @@
+[![Actions Status](https://github.com/domiballoch/strategy-example/actions/workflows/maven.yml/badge.svg)](https://github.com/domiballoch/strategy-example/actions)
+[![codecov](https://codecov.io/gh/domiballoch/strategy-example/branch/master/graph/badge.svg?token=3DQWELQG2V)](https://codecov.io/gh/domiballoch/strategy-example)
+
 <h1>Strategy Pattern Example</h1>
 <h4>Author: Dominic Balloch</h4>
 

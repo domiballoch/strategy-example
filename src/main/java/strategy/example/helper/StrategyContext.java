@@ -1,13 +1,11 @@
 package strategy.example.helper;
 
 import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-import strategy.example.standarddiscounter.Discounter;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
-
-import java.math.BigDecimal;
+import strategy.example.standarddiscounter.Discounter;
 
 @Getter
 @Setter

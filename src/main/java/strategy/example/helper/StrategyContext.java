@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @Component
@@ -14,5 +16,12 @@ import org.springframework.stereotype.Component;
 public class StrategyContext {
 
     private Discounter discounter;
+
+    /**
+     * For open closed principle
+     */
+//    public BigDecimal executeStrategyOCP(final Discounter discounter){
+//        return discounter.applyDiscountOCP();
+//    }
 
 }

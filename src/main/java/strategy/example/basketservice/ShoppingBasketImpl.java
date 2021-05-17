@@ -1,12 +1,12 @@
 package strategy.example.basketservice;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import strategy.example.helper.DiscountHelper;
 import strategy.example.helper.DiscountHelperWithContext;
 import strategy.example.standarddiscounter.Discounter;
 import strategy.example.utils.StrategyUtils;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
@@ -48,5 +48,4 @@ public class ShoppingBasketImpl implements ShoppingBasket {
         log.info("Sum of basket: {}", totalPrice);
         return StrategyUtils.returnValueWithScale(totalPrice);
     }
-
 }

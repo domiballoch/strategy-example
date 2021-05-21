@@ -41,6 +41,7 @@ public class BlackFridayDiscounter implements Discounter, FreeGiftOffer {
      */
     @Override
     public FreeGift addFreeGift(FreeGift freeGift) {
+        log.info("Adding free gift: {}", freeGift);
         //basketService.addItemToBasket(freeGift);
         return freeGift;
     }

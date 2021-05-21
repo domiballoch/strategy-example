@@ -42,7 +42,7 @@ public class DiscountHelperWithContext {
             default:
                 throw new IllegalArgumentException("This code is no longer valid: " + discountCode);
         }
-        return strategyContext.getDiscounter();
+        return strategyContext.getDiscounter(); //or strategyContext.executeStrategy();
     }
 
 }

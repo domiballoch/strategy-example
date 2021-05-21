@@ -21,6 +21,8 @@ This is made much easier by following the other principles, e.g using abstractio
 Example - The Discounter interface has no concrete code attached to it. The code that calls it doesn't care.
 The implementations are separated, others can easily added without modified existing code or functionality.
 
+The switch would need modification if adding additional discounts. Often, the logic would be set by the business.
+
 Note: Its nearly always better to use interfaces and composition over extending as we see in our next example.
 
 

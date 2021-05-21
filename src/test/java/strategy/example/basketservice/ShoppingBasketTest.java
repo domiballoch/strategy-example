@@ -57,7 +57,8 @@ public class ShoppingBasketTest {
         assertTrue(actualMessage.contains(expectedMessage));
     }
 
-    @Test public void shouldReturnTotalWithoutDiscount() {
+    @Test
+    public void shouldReturnTotalWithoutDiscount() {
         final BigDecimal productPrice = (new BigDecimal("100.00"));
         final BigDecimal price = shoppingBasketImpl.calculateBasket(productPrice);
 

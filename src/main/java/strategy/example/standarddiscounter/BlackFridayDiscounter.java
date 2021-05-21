@@ -1,25 +1,25 @@
 package strategy.example.standarddiscounter;
 
-import strategy.example.config.ConfigProperties;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import strategy.example.config.ConfigProperties;
+import strategy.example.domain.FreeGift;
 
 import java.math.BigDecimal;
 
 @Slf4j
 @Component
-public class BlackFridayDiscounter implements Discounter {
+public class BlackFridayDiscounter implements Discounter, FreeGiftOffer {
 
-    @Autowired
-    private ConfigProperties configProperties;
+      private ConfigProperties configProperties;
 
     /**
+     * Alternative to Autowiring
      * Constructor injection example - refer to solid.txt
      */
-//    public BlackFridayDiscounter(ConfigProperties configProperties){
-//        this.configProperties = configProperties;
-//    }
+    public BlackFridayDiscounter(ConfigProperties configProperties){
+        this.configProperties = configProperties;
+    }
 
     /**
      * Apply black friday discount
@@ -33,4 +33,15 @@ public class BlackFridayDiscounter implements Discounter {
         return amount.multiply(new BigDecimal(String.valueOf(configProperties.getBlackFriday())));
     }
 
+    /**
+     * Adds freeGift to basket - new behaviour in strategy
+     *
+     * @param freeGift
+     * @return
+     */
+    @Override
+    public FreeGift addFreeGift(FreeGift freeGift) {
+        //basketService.addItemToBasket(freeGift);
+        return freeGift;
+    }
 }
